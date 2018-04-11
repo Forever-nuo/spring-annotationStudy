@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--
+     单列bean的
+     默认懒加载
+  -->
+    <bean id="personSingletonLazyDefault" class="model.Person"
+          p:name="张三" p:age="15" scope="singleton"
+    />
+
+    <!--
+        单列bean的不懒加载
+        默认default为false
+     -->
+    <bean id="personSingletonLazyFalse" class="model.Person"
+          p:name="张三" p:age="15" scope="singleton"
+          lazy-init="false"/>
+
+    <!--
+    单列bean的懒加载
+    -->
+    <bean id="personSingletonLazyTrue" class="model.Person" p:name="张三" p:age="15"
+          scope="singleton" lazy-init="true"/>
+
+
+</beans>

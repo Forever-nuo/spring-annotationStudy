@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--
+    没有id的bean放到
+    id的值=全类名#加序号
+    -->
+    <bean class="model.Person" p:name="张三" p:age="15"/>
+
+
+    <!--
+    有id的Bean
+    -->
+    <bean id="person" class="model.Person" p:name="张三1" p:age="11" />
+
+</beans>
