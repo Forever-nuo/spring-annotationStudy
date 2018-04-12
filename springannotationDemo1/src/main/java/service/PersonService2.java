@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
  * @date: 2018/4/11 11:00
  */
 @Service
-public class PersonService {
+public class PersonService2 {
 
 
     public void say(){

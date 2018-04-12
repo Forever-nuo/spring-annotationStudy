@@ -5,27 +5,32 @@ import lombok.experimental.Accessors;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 /**
  * @author: Forever丶诺
  * @date: 2018/4/11 16:59
  */
 @Data
 @Accessors(chain = true)
-public class Car1 implements InitializingBean,DisposableBean {
+public class Car2 {
     private String name;
     private Integer type;
 
-    public Car1() {
+    public Car2() {
         System.out.println("构造函数");
     }
 
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("DisposableBean 的销毁方法" );
+
+    @PostConstruct
+    public void init() {
+        System.out.println("使用@postConstruct 注解");
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("InitializingBean 初始化方法");
+    @PreDestroy
+    public void destroy() {
+        System.out.println("使用 @PreDestroy 注解");
     }
+
 }
